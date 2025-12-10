@@ -4,7 +4,9 @@ import { koKR } from "@clerk/localizations";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { SyncUserProvider } from "@/components/providers/sync-user-provider";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -65,6 +67,8 @@ export default function RootLayout({
           <SyncUserProvider>
             <Navbar />
             {children}
+            <Footer />
+            <Toaster />
           </SyncUserProvider>
         </body>
       </html>

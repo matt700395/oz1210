@@ -101,18 +101,54 @@
     - [x] 모바일 레이아웃: 로고 + 아이콘 네비게이션 + 로그인 버튼
     - [x] sticky 헤더 적용
     - [x] 반응형 디자인 개선
-- [ ] 공통 컴포넌트
-  - [ ] `components/ui/loading.tsx` - 로딩 스피너
-  - [ ] `components/ui/skeleton.tsx` - 스켈레톤 UI
-  - [ ] `components/ui/error.tsx` - 에러 메시지
-  - [ ] `components/ui/toast.tsx` - 토스트 알림 (shadcn/ui)
+- [x] 공통 컴포넌트
+  - [x] `components/ui/loading.tsx` - 로딩 스피너
+  - [x] `components/ui/skeleton.tsx` - 스켈레톤 UI
+  - [x] `components/ui/error.tsx` - 에러 메시지
+  - [x] `components/ui/toast.tsx` - 토스트 알림 (shadcn/ui)
+  ***
+  - [x] 스켈레톤 UI 컴포넌트 (`components/ui/skeleton.tsx`)
+    - [x] shadcn/ui skeleton 컴포넌트 생성 (animate-pulse, bg-gray-200 dark:bg-gray-700)
+    - [x] 기본 스켈레톤 컴포넌트 제공
+  - [x] 토스트 알림 컴포넌트 (`components/ui/sonner.tsx`)
+    - [x] sonner 패키지 설치
+    - [x] Toaster 컴포넌트 생성 (다크모드 지원)
+    - [x] Toaster Provider를 layout.tsx에 추가
+  - [x] 로딩 스피너 컴포넌트 (`components/ui/loading.tsx`)
+    - [x] Loading 컴포넌트 생성
+    - [x] 크기 variants 구현 (sm: 16px, md: 24px, lg: 32px)
+    - [x] border spinner 애니메이션 적용
+    - [x] 접근성: ARIA 라벨, 스크린 리더 지원
+  - [x] 에러 메시지 컴포넌트 (`components/ui/error.tsx`)
+    - [x] ErrorDisplay 컴포넌트 생성
+    - [x] 에러 타입별 처리 (api, network, not-found, generic)
+    - [x] 에러 타입별 아이콘 (AlertCircle, WifiOff)
+    - [x] 재시도 버튼 옵션 (onRetry 핸들러)
+    - [x] 재시도 중 상태 표시 (isRetrying)
+    - [x] 컴팩트 모드 지원
+    - [x] 접근성: ARIA 라벨
 
 ## Phase 2: 홈페이지 (`/`) - 관광지 목록
 
-- [ ] 페이지 기본 구조
-  - [ ] `app/page.tsx` 생성
-    - [ ] 기본 레이아웃 (헤더, 메인, 푸터)
-    - [ ] 반응형 컨테이너 설정
+- [x] 페이지 기본 구조
+  - [x] `app/page.tsx` 생성
+    - [x] 기본 레이아웃 (헤더, 메인, 푸터)
+    - [x] 반응형 컨테이너 설정
+  ***
+  - [x] Footer 컴포넌트 생성 (`components/Footer.tsx`)
+    - [x] 저작권 정보 표시 (My Trip © 2025)
+    - [x] About, Contact 링크 추가
+    - [x] 한국관광공사 API 제공 표시
+    - [x] 반응형 디자인 적용 (모바일/데스크톱)
+    - [x] 다크모드 지원
+  - [x] RootLayout에 Footer 추가 (`app/layout.tsx`)
+    - [x] Footer 컴포넌트 import
+    - [x] 레이아웃 구조: Navbar → children → Footer
+  - [x] 홈페이지 기본 구조 설정 (`app/page.tsx`)
+    - [x] 기존 SaaS 템플릿 내용 제거
+    - [x] 반응형 컨테이너 설정 (max-w-7xl, px-4/6/8)
+    - [x] 최소 높이 설정 (min-h-[calc(100vh-80px)])
+    - [x] 임시 플레이스홀더 메시지 추가
 - [ ] 관광지 목록 기능 (MVP 2.1)
   - [ ] `components/tour-card.tsx` 생성
     - [ ] 썸네일 이미지 (기본 이미지 fallback)
